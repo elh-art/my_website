@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  align-items: right;
+  justify-content: right;
+  perspective: 1000px;
+}
+
+span {
+  color: aliceblue;
+
+  /* content-visibility: inherit; */
+  /* visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity 300ms; */
+}
+
+.box {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  background-color: transparent;
+  margin: 1px;
+  border: 2px solid whitesmoke;
+
+  animation: flip 400ms linear;
+  animation-fill-mode: backwards;
+  transform-origin: top;
+  perspective: 100px;
+  visibility: none;
+}
+
+.cont1 .box:nth-child(4) {
+  animation-delay: 0ms;
+}
+.cont2 .box:nth-child(3) {
+  animation-delay: 400ms;
+}
+.cont3 .box:nth-child(2) {
+  animation-delay: 800ms;
+}
+.cont4 .box:nth-child(1) {
+  animation-delay: 1200ms;
+}
+.cont1 .box:nth-child(3) {
+  animation-delay: 200ms;
+}
+.cont2 .box:nth-child(2) {
+  animation-delay: 600ms;
+}
+.cont3 .box:nth-child(1) {
+  animation-delay: 1000ms;
+}
+.cont1 .box:nth-child(2) {
+  animation-delay: 400ms;
+}
+.cont2 .box:nth-child(1) {
+  animation-delay: 800ms;
+}
+.cont1 .box:nth-child(1) {
+  animation-delay: 600ms;
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateX(90deg);
+    border: 0px solid whitesmoke;
+  }
+  50% {
+    transform: rotateX(45deg);
+    border: 0.1px solid whitesmoke;
+  }
+
+  75% {
+    transform: rotateX(-20deg);
+    border: 0.2px solid whitesmoke;
+  }
+  100% {
+    transform: rotateX(0);
+    border: 2px solid whitesmoke;
+  }
+}
