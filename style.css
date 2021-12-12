@@ -22,26 +22,42 @@ body {
 
 span {
   color: aliceblue;
-
-  /* content-visibility: inherit; */
-  /* visibility: visible;
-  opacity: 1;
-  transition: visibility 0s linear 0s, opacity 300ms; */
+  visibility: none;
 }
 
 .box {
   position: relative;
   height: 200px;
   width: 200px;
-  background-color: transparent;
+  background-color: black;
   margin: 1px;
   border: 2px solid whitesmoke;
 
   animation: flip 400ms linear;
   animation-fill-mode: backwards;
   transform-origin: top;
-  perspective: 100px;
-  visibility: none;
+}
+
+.box:hover {
+  position: relative;
+  transform: rotateY(180deg);
+  transition: 0.6s;
+  transition-delay: 111ms;
+  transform-style: preserve-3d;
+}
+
+.front,
+.back {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.front {
+  z-index: 2;
+}
+
+.back {
+  transform: rotateY(180deg);
 }
 
 .cont1 .box:nth-child(4) {
@@ -93,4 +109,18 @@ span {
     transform: rotateX(0);
     border: 2px solid whitesmoke;
   }
+}
+
+footer {
+  display: flex;
+  align-items: initial;
+  justify-content: left;
+}
+
+i {
+  color: white;
+}
+
+.counter-container {
+  margin: 20px;
 }
