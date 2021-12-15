@@ -5,14 +5,39 @@
 }
 
 body {
-  display: flex;
-  flex-direction: column;
   background-color: black;
   font-family: 'Roboto', sans-serif;
-  height: 100vh;
+  min-height: 100vh;
 
   overflow: hidden;
   margin: 0;
+}
+
+/* .flippers {
+  display: flex;
+  justify-content: space-between;
+} */
+
+.left-panel {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: space-evenly;
+  /* color: gray; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 5rem;
+  border-right: 2px solid whitesmoke;
+  padding: 10px;
+  align-content: center;
+}
+
+.wrapper {
+  position: relative;
+  min-height: 100vh;
 }
 
 .container {
@@ -42,7 +67,8 @@ span {
   transform-origin: top;
 }
 
-.box:hover {
+.box:hover,
+.fab:hover {
   position: relative;
   transform: rotateY(180deg);
   transition: 0.6s;
@@ -117,17 +143,89 @@ span {
 }
 
 footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 6rem;
   display: flex;
-  align-items: initial;
-  justify-content: left;
+
+  justify-content: space-between;
   margin-top: auto;
   border-top: 2px solid whitesmoke;
 }
 
+.foot-left {
+  display: flex;
+  margin-left: 50px;
+}
+
 i {
+  opacity: 0.6;
+}
+
+.fa-html5 {
+  color: orange;
+}
+
+.fa-css3-alt {
+  color: lightblue;
+}
+
+.fa-js-square {
+  color: yellow;
+}
+
+.fa-react {
+  color: cyan;
+}
+
+.fa-linkedin-in {
   color: white;
 }
 
-.counter-container {
+.fa-github {
+  color: whitesmoke;
+}
+
+.fa-twitter {
+  color: cyan;
+}
+
+.foot-container {
   margin: 20px;
+}
+
+.foot-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-content: space-between;
+  margin: 0px;
+}
+
+.foot-text {
+  margin: auto;
+  padding: 5px;
+  width: 200px;
+  font-size: 2.1rem;
+  color: whitesmoke;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.madeIn {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+@media screen and (max-height: 904px) {
+  footer {
+    background-color: black;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .foot-left {
+    margin-left: 0px;
+  }
 }
