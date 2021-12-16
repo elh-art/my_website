@@ -1,12 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+}
+
+#canvas1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(#161616, #000000);
 }
 
 body {
   background-color: black;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   min-height: 100vh;
 
   overflow: hidden;
@@ -24,7 +35,6 @@ body {
   flex-wrap: wrap;
   align-items: start;
   justify-content: space-evenly;
-  /* color: gray; */
   position: fixed;
   top: 0;
   left: 0;
@@ -50,7 +60,16 @@ body {
 
 span {
   color: aliceblue;
-  visibility: none;
+  /* visibility: none; */
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#flip {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .box {
@@ -79,8 +98,16 @@ span {
 .front,
 .back {
   position: absolute;
+  height: 200px;
+  width: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  text-align: center;
+
+  font-size: 1.5rem;
   backface-visibility: hidden;
-  margin: 10px;
 }
 
 .front {
@@ -88,7 +115,7 @@ span {
 }
 
 .back {
-  transform: rotateY(180deg);
+  transform: rotateY(180deg) translate(50%, -50%);
 }
 
 .cont1 .box:nth-child(4) {
@@ -160,7 +187,7 @@ footer {
 }
 
 i {
-  opacity: 0.6;
+  opacity: 0.9;
 }
 
 .fa-html5 {
@@ -205,12 +232,12 @@ i {
 
 .foot-text {
   margin: auto;
-  padding: 5px;
   width: 200px;
-  font-size: 2.1rem;
+  font-size: 2rem;
   color: whitesmoke;
   font-weight: bolder;
   text-align: center;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .madeIn {
@@ -225,7 +252,15 @@ i {
 }
 
 @media screen and (max-width: 600px) {
-  .foot-left {
-    margin-left: 0px;
+  .madeIn {
+    display: none;
   }
+  .foot-container {
+    display: none;
+  }
+}
+
+a:-webkit-any-link {
+  color: blanchedalmond;
+  text-decoration: none;
 }
