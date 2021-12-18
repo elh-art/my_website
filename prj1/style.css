@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fafafa;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#btn {
+  position: fixed;
+  top: 20px;
+  background-color: #f9ca24;
+  color: darkslateblue;
+  border: 0;
+  border-radius: 3px;
+  padding: 12px 20px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 3px 3px rgba(249, 202, 36, 0.5);
+}
+
+.magic {
+  position: absolute;
+  top: 50%;
+  left: 51%;
+}
+
+.magic:active {
+  box-shadow: none;
+  transform: scale(0.95);
+}
+
+.newPic {
+  position: absolute;
+  top: 50%;
+  right: 51%;
+}
+
+.newPic:active {
+  box-shadow: none;
+  transform: scale(0.95);
+}
+
+.boxes {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: 500px;
+  width: 500px;
+  top: 100px;
+  transition: 0.2s ease-in-out;
+}
+
+.boxes.big {
+  width: 580px;
+  height: 580px;
+}
+
+.box {
+  background-repeat: no-repeat;
+  background-size: 500px 500px;
+  position: relative;
+  height: 125px;
+  width: 125px;
+  transition: 0.2s step-end;
+}
+
+.box.empty {
+  opacity: 0;
+}
+
+.box::after {
+  content: '';
+  background-color: #f6e58d;
+  position: absolute;
+  top: 8px;
+  right: -15px;
+  height: 100%;
+  width: 15px;
+  transform: skewY(45deg);
+}
+
+.box::before {
+  content: '';
+  background-color: #f9ca24;
+  position: absolute;
+  bottom: -15px;
+  left: 8px;
+  height: 15px;
+  width: 100%;
+  transform: skewX(45deg);
+}
+
+.mobile {
+  background-color: orange;
+  border-radius: 3px;
+  margin: 30px;
+  padding: 12px 20px;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 1px;
+  box-shadow: 3px 3px rgba(249, 202, 36, 0.5);
+  z-index: 11;
+  transform: translateY(100vh);
+}
+
+.noDrag {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  cursor: not-allowed;
+}
+
+[draggable] {
+  cursor: grab;
+}
+
+[draggable]::after {
+  content: '';
+  border-right: 2px dashed #caa41a;
+  border-top: 2px dashed #caa41a;
+  height: 122px;
+}
+
+[draggable]::before {
+  content: '';
+  border-bottom: 2px dashed #caa41a;
+  border-left: 2px dashed #caa41a;
+  width: 122px;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    transform: translateY(-130vh);
+  }
+}
