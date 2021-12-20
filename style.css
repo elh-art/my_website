@@ -28,7 +28,7 @@ body {
   display: block;
   position: fixed;
   top: 0;
-  right: 0;
+  right: 5rem;
 }
 
 .left-panel {
@@ -45,6 +45,15 @@ body {
   border-right: 1px solid whitesmoke;
   padding: 10px;
   align-content: center;
+}
+
+.right-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 5rem;
+  border-left: 1px solid whitesmoke;
 }
 
 .wrapper {
@@ -83,6 +92,7 @@ span {
   margin: 1px;
   border: 1px solid whitesmoke;
   border-bottom-right-radius: 1rem;
+  font-size: 1.5rem;
 
   animation: flip 800ms linear;
   animation-fill-mode: backwards;
@@ -108,7 +118,6 @@ span {
   margin: 0;
   text-align: center;
 
-  font-size: 1.5rem;
   backface-visibility: hidden;
 }
 
@@ -241,16 +250,19 @@ i {
   color: cyan;
 }
 
-.foot-container {
-  margin: 20px;
-}
-
 .foot-right {
   display: flex;
   flex-direction: row;
   justify-content: right;
   align-content: space-between;
-  margin: 0px;
+  margin-right: 5rem;
+}
+
+.foot-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
 }
 
 .foot-text {
@@ -267,6 +279,28 @@ i {
   font-weight: normal;
 }
 
+a:any-link,
+a:-webkit-any-link {
+  color: blanchedalmond;
+  text-decoration: none;
+}
+
+.article {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20%;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  box-shadow: 0 10px 60px rgba(224, 215, 215, 0.12),
+    0 1px 4px rgba(196, 182, 182, 0.24);
+  border-radius: 10px;
+}
+
+article {
+  color: white;
+}
+
 @media screen and (max-height: 904px) {
   footer {
     background-color: black;
@@ -274,6 +308,32 @@ i {
 }
 
 @media screen and (max-width: 600px) {
+  .flippers {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    right: auto;
+    left: auto;
+  }
+  .container {
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+  }
+  .box {
+    height: 120px;
+    font-size: 1rem;
+  }
+
+  img {
+    height: 120px;
+  }
+
+  #itSMe {
+    height: 110px;
+    border-radius: 10px;
+  }
+
   .madeIn {
     display: none;
   }
@@ -283,10 +343,7 @@ i {
   .left-panel {
     display: none;
   }
-}
-
-a:any-link,
-a:-webkit-any-link {
-  color: blanchedalmond;
-  text-decoration: none;
+  .right-panel {
+    display: none;
+  }
 }
