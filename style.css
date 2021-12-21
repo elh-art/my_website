@@ -1,12 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+  --main-txt-color: whitesmoke;
+  --side-pnl-size: 5rem;
+  --flip-box-height: 200px;
+  --flip-box-width: 200px;
 }
 
-#canvas1 {
+* {
+  box-sizing: border-box;
+  /* font-size: 100%; */
+}
+
+canvas {
   position: absolute;
   top: 0;
   left: 0;
@@ -20,30 +26,27 @@ body {
   font-family: 'Poppins', sans-serif;
   min-height: 100vh;
 
-  overflow: hidden;
   margin: 0;
 }
 
 .flippers {
-  display: block;
   position: fixed;
   top: 0;
-  right: 5rem;
+  right: var(--side-pnl-size);
 }
 
 .left-panel {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  align-items: start;
-  justify-content: space-evenly;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
-  width: 5rem;
-  border-right: 1px solid whitesmoke;
-  padding: 10px;
+  width: var(--side-pnl-size);
+  border-right: 1px solid var(--main-txt-color);
   align-content: center;
 }
 
@@ -52,8 +55,8 @@ body {
   top: 0;
   right: 0;
   height: 100%;
-  width: 5rem;
-  border-left: 1px solid whitesmoke;
+  width: var(--side-pnl-size);
+  border-left: 1px solid var(--main-txt-color);
 }
 
 .wrapper {
@@ -67,13 +70,11 @@ body {
   justify-content: right;
   perspective: 1000px;
   opacity: 0.9;
-  width: 808px;
+  /* width: 808px; */
 }
 
 span {
   color: aliceblue;
-  /* visibility: none; */
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 #flip {
@@ -86,11 +87,11 @@ span {
 
 .box {
   position: relative;
-  height: 200px;
-  width: 200px;
+  height: var(--flip-box-height);
+  width: var(--flip-box-width);
   background-color: black;
   margin: 1px;
-  border: 1px solid whitesmoke;
+  border: 1px solid var(--main-txt-color);
   border-bottom-right-radius: 1rem;
   font-size: 1.5rem;
 
@@ -110,8 +111,6 @@ span {
 .front,
 .back {
   position: absolute;
-  height: 200px;
-  width: 200px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -131,8 +130,8 @@ span {
 
 img {
   position: absolute;
-  height: 198px;
-  width: 198px;
+  height: calc(var(--flip-box-height) - 2px);
+  width: calc(var(--flip-box-width) - 2px);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -146,8 +145,8 @@ img {
 }
 
 #itSMe {
-  height: 185px;
-  width: 185px;
+  height: calc(var(--flip-box-height) - 15px);
+  width: calc(var(--flip-box-width) - 15px);
   border-radius: 50%;
 }
 
@@ -210,12 +209,12 @@ footer {
 
   justify-content: space-between;
   margin-top: auto;
-  border-top: 1px solid whitesmoke;
+  border-top: 1px solid var(--main-txt-color);
 }
 
 .foot-left {
   display: flex;
-  margin-left: 50px;
+  margin-left: var(--side-pnl-size);
 }
 
 i {
@@ -253,9 +252,7 @@ i {
 .foot-right {
   display: flex;
   flex-direction: row;
-  justify-content: right;
-  align-content: space-between;
-  margin-right: 5rem;
+  margin-right: var(--side-pnl-size);
 }
 
 .foot-container {
@@ -263,13 +260,14 @@ i {
   flex-direction: column;
   align-items: center;
   margin: 10px;
+  margin-left: 33px;
 }
 
 .foot-text {
   margin: auto;
   width: 200px;
   font-size: 2rem;
-  color: whitesmoke;
+  color: var(--main-txt-color);
   font-weight: bolder;
   text-align: center;
 }
@@ -301,19 +299,27 @@ article {
   color: white;
 }
 
-@media screen and (max-height: 904px) {
+@media screen and (max-height: 700px) {
   footer {
     background-color: black;
   }
+  body {
+    overflow: scroll;
+  }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 766px) {
+  * {
+    font-size: 90%;
+  }
+
   .flippers {
     display: flex;
     flex-direction: column;
     position: relative;
     right: auto;
     left: auto;
+    top: 10px;
   }
   .container {
     flex-direction: column;
@@ -322,7 +328,14 @@ article {
   }
   .box {
     height: 120px;
-    font-size: 1rem;
+  }
+
+  .foot-left {
+    margin: auto;
+  }
+
+  .foot-right {
+    display: none;
   }
 
   img {
@@ -345,5 +358,17 @@ article {
   }
   .right-panel {
     display: none;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  :root {
+    --side-pnl-size: 10rem;
+    --flip-box-height: 300px;
+    --flip-box-width: 300px;
+  }
+
+  .box {
+    font-size: 2.2rem;
   }
 }
