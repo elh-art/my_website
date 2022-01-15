@@ -207,6 +207,25 @@ button {
   transition: all 0.5s ease-in;
 }
 
+.description {
+  position: absolute;
+  background-color: steelblue;
+  border-radius: 3px;
+  top: 100px;
+  margin: 30px;
+  max-width: 350px;
+  padding: 12px 20px;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 1px;
+  box-shadow: 10px 10px rgba(6, 67, 107, 0.5);
+  z-index: 10;
+}
+
+.description.hide {
+  display: none;
+}
+
 @media screen and (max-height: 740px) {
   .clock-container {
     position: absolute;

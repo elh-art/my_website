@@ -1,12 +1,27 @@
 const boxesContainer = document.getElementById('boxes')
 const btnSG = document.querySelector('.magic')
 const btnNP = document.querySelector('.newPic')
+// const descriptionEl = document.querySelector('.description')
+// const closeEl = document.querySelector('.close')
+
+// closeEl.addEventListener('click', () => {
+//   descriptionEl.classList.add('hide')
+// })
 
 const unsplashURL = 'https://source.unsplash.com/random/'
 
 btnNP.addEventListener('click', () => {
+  // window.location.hash = 'reload'
   window.location.reload(false)
 })
+
+// if (window.location.hash == '#reload') {
+//   onReload()
+// }
+
+// function onReload() {
+//   closeEl.click()
+// }
 
 function createBoxes() {
   for (let i = 0; i < 4; i++) {
@@ -27,7 +42,9 @@ createBoxes()
 const tiles = document.querySelectorAll('.box')
 
 btnSG.addEventListener('click', () => {
+  // onReload()
   removeEmpty()
+
   boxesContainer.classList.add('big')
   boxesContainer.lastChild.classList.add('empty')
 

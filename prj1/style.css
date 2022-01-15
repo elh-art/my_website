@@ -114,6 +114,23 @@ body {
   transform: translateY(100vh);
 }
 
+.description {
+  position: absolute;
+  background-color: orange;
+  border-radius: 5px;
+  top: 77px;
+  margin: 30px;
+  padding: 12px 20px;
+  max-width: 550px;
+  text-align: center;
+  letter-spacing: 1px;
+  box-shadow: 10px 10px rgba(249, 202, 36, 0.5);
+}
+
+.description.hide {
+  display: none;
+}
+
 .noDrag {
   user-select: none;
   -moz-user-select: none;

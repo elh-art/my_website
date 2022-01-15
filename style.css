@@ -16,7 +16,7 @@ body {
 
 canvas {
   position: absolute;
-  background: radial-gradient(#161616, #000000);
+  background: radial-gradient(#191919, #000000);
 }
 
 .flippers {
@@ -94,6 +94,10 @@ canvas {
   transform: translate(-50%, -50%);
 }
 
+.cutCorner {
+  overflow: hidden;
+}
+
 .back {
   transform: rotateY(180deg) translate(50%, -50%);
 }
@@ -122,22 +126,11 @@ span {
 
 img {
   position: absolute;
-  height: calc(var(--flip-box-height) - 2px);
-  width: calc(var(--flip-box-width) - 2px);
+  height: var(--flip-box-height);
+  width: var(--flip-box-width);
   object-fit: cover;
 
   transform: translate(-50%, -50%);
-}
-
-#blurred {
-  filter: blur(3px) grayscale();
-  border-bottom-right-radius: 1rem;
-}
-
-#itSMe {
-  height: calc(var(--flip-box-height) - 15px);
-  width: calc(var(--flip-box-width) - 15px);
-  border-radius: 50%;
 }
 
 .fa-html5 {
@@ -245,18 +238,43 @@ a:-webkit-any-link {
 }
 
 .article {
-  position: relative;
-  top: 50px;
   max-width: 800px;
   margin: auto;
   padding: 20px;
   border-radius: 10px;
+  margin-bottom: 50px;
   box-shadow: 0 10px 60px rgba(224, 215, 215, 0.12),
     0 1px 4px rgba(196, 182, 182, 0.24);
+  font-size: 1.4rem;
+  color: var(--main-txt-color);
+  background: radial-gradient(#191919, #000000);
 }
 
-article {
-  color: var(--main-txt-color);
+.article h3 {
+  text-transform: uppercase;
+  margin-top: 0;
+}
+
+.lowBox {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+p.bold {
+  font-weight: bolder;
+}
+
+.sources,
+.prSolving {
+  width: 350px;
+}
+
+.fa-download {
+  font-size: 1.2rem;
+  padding-left: 0;
+  padding-right: 0.5rem;
+  color: #434343;
 }
 
 @keyframes flip {
@@ -320,11 +338,6 @@ article {
     height: 120px;
   }
 
-  #itSMe {
-    height: 110px;
-    border-radius: 10px;
-  }
-
   .madeIn {
     display: none;
   }
@@ -340,13 +353,17 @@ article {
   .right-panel {
     display: none;
   }
+
+  .article {
+    font-size: 1.2rem;
+  }
 }
 
 @media screen and (min-width: 1920px) {
   :root {
     --side-pnl-size: 10rem;
-    --flip-box-height: 300px;
-    --flip-box-width: 300px;
+    --flip-box-height: 289px;
+    --flip-box-width: 289px;
   }
 
   .box {

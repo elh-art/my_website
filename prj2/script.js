@@ -3,9 +3,15 @@ const buttons = document.querySelectorAll('.toggleBtn')
 const clockEl = document.querySelector('.clock')
 const toggle = document.querySelector('.toggle')
 const needleEl = document.querySelector('.needle')
+const descriptionEl = document.querySelector('.description')
+const closeEl = document.querySelector('.close')
 
 let num = 0
 var flip = 'now'
+
+closeEl.addEventListener('click', () => {
+  descriptionEl.classList.add('hide')
+})
 
 // StackOverflow https://tinyurl.com/2p8smryu
 const scale = (numz, in_min, in_max, out_min, out_max) => {
