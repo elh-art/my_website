@@ -5,6 +5,7 @@ canvas.height = window.innerHeight
 
 let particlesArray
 
+//Kudos to Franks laboratory's youtube channel where the base of the code came from.
 //get mouse position
 let mouse = {
   x: null,
@@ -139,16 +140,3 @@ window.addEventListener('mouseout', function () {
 
 init()
 animate()
-
-// const boxes = document.querySelectorAll('.box')
-
-// console.log(boxes)
-
-// boxes.forEach((e) => {
-//   e.addEventListener('mouseover', (e) => {
-//     e.target.classList.add('flip')
-//   })
-//   e.addEventListener('mouseout', (e) => {
-//     e.target.classList.remove('flip')
-//   })
-// })

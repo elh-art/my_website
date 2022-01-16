@@ -1,27 +1,28 @@
 const boxesContainer = document.getElementById('boxes')
 const btnSG = document.querySelector('.magic')
 const btnNP = document.querySelector('.newPic')
-// const descriptionEl = document.querySelector('.description')
-// const closeEl = document.querySelector('.close')
-
-// closeEl.addEventListener('click', () => {
-//   descriptionEl.classList.add('hide')
-// })
+const descriptionEl = document.querySelector('.description')
+const closeEl = document.querySelector('.close')
 
 const unsplashURL = 'https://source.unsplash.com/random/'
 
+closeEl.addEventListener('click', () => {
+  descriptionEl.classList.add('hide')
+})
+
+function onReload() {
+  closeEl.click()
+}
+
 btnNP.addEventListener('click', () => {
-  // window.location.hash = 'reload'
+  window.location.hash = 'reload'
   window.location.reload(false)
 })
 
-// if (window.location.hash == '#reload') {
-//   onReload()
-// }
-
-// function onReload() {
-//   closeEl.click()
-// }
+if (window.location.hash == '#reload') {
+  onReload()
+  console.log('beep!')
+}
 
 function createBoxes() {
   for (let i = 0; i < 4; i++) {
@@ -42,7 +43,7 @@ createBoxes()
 const tiles = document.querySelectorAll('.box')
 
 btnSG.addEventListener('click', () => {
-  // onReload()
+  onReload()
   removeEmpty()
 
   boxesContainer.classList.add('big')
@@ -62,6 +63,7 @@ btnSG.addEventListener('click', () => {
     boxesContainer.appendChild(elm)
   })
 
+  cleanUp()
   gLogic()
 })
 
