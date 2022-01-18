@@ -83,6 +83,7 @@ canvas {
   transform-origin: top;
   box-shadow: 0 10px 60px rgba(224, 215, 215, 0.12),
     0 1px 4px rgba(196, 182, 182, 0.24);
+  cursor: pointer;
 }
 
 .front,
@@ -110,9 +111,7 @@ canvas {
 .left-panel .fab:hover,
 .foot-right .fab:hover {
   position: relative;
-  -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
-  -webkit-transition: all 0.6s ease-in-out 111ms;
   transition: all 0.6s ease-in-out 111ms;
   transform-style: preserve-3d;
 }
