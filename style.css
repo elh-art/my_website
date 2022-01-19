@@ -286,6 +286,46 @@ p.bold {
   color: #434343;
 }
 
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.homeLink {
+  color: #333;
+  opacity: 0.5;
+}
+
+.homeText {
+  visibility: hidden;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-style: italic;
+  letter-spacing: 0.05em;
+  color: var(--main-txt-color);
+}
+
+.homeText:before {
+  left: 0;
+  top: 0;
+  content: attr(filter-content);
+  filter: url(#motion-blur-filter);
+}
+
+svg {
+  height: 0;
+  width: 0;
+}
+
+.home:hover .homeText {
+  visibility: visible;
+}
+
+.home:hover .fa-reply {
+  transform: scale(1.1);
+}
+
 @keyframes flip {
   0% {
     transform: rotateX(90deg);
