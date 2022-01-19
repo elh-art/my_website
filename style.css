@@ -54,6 +54,7 @@ canvas {
 
 .container {
   display: flex;
+  -webkit-justify-content: right;
   justify-content: right;
   -webkit-perspective: 1000px;
   perspective: 1000px;
