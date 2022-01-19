@@ -43,6 +43,7 @@ canvas {
   justify-content: center;
   height: 100px;
   width: var(--side-pnl-size);
+  cursor: pointer;
 }
 
 .miniBack {

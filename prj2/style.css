@@ -207,6 +207,48 @@ button {
   transition: all 0.5s ease-in;
 }
 
+.back {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.backLink {
+  color: #333;
+  opacity: 0.5;
+}
+
+.backText {
+  position: relative;
+  visibility: hidden;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-style: italic;
+  letter-spacing: 0.05em;
+}
+
+.backText:before {
+  left: 0;
+  top: 0;
+  content: attr(filter-content);
+  filter: url(#motion-blur-filter);
+}
+
+svg {
+  height: 0;
+  width: 0;
+}
+
+.back:hover .backText {
+  visibility: visible;
+}
+
+.back:hover .fa-reply {
+  transform: scale(1.1);
+}
+
 .description {
   position: absolute;
   background-color: steelblue;
