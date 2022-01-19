@@ -53,8 +53,11 @@ canvas {
 }
 
 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: right;
+  -webkit-box-pack: right;
+  -ms-flex-pack: right;
   justify-content: right;
   -webkit-perspective: 1000px;
   perspective: 1000px;
