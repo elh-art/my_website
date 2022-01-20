@@ -74,6 +74,7 @@ class Particle {
 //create particle array
 function init() {
   particlesArray = []
+  //number of particle adjustment
   let numberOfParticles = (canvas.height * canvas.width) / 40000
   if (numberOfParticles > 200) {
     numberOfParticles = 200
@@ -101,6 +102,7 @@ function connect() {
         (particlesArray[a].y - particlesArray[b].y) *
           (particlesArray[a].y - particlesArray[b].y)
       if (distance < (canvas.width / 4) * (canvas.height / 4)) {
+        //line distance adjustment
         opacityValue = 1 - distance / 30000
         ctx.strokeStyle = 'rgba(226,226,226,' + opacityValue + ')'
         ctx.lineWidth = 8
