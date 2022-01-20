@@ -302,7 +302,7 @@ p.bold {
 }
 
 .homeText {
-  visibility: hidden;
+  opacity: 0.2;
   font-weight: 900;
   text-transform: uppercase;
   font-style: italic;
@@ -323,7 +323,7 @@ svg {
 }
 
 .home:hover .homeText {
-  visibility: visible;
+  opacity: 1;
 }
 
 .home:hover .fa-reply {
@@ -376,7 +376,8 @@ svg {
   }
 
   #canvas1 {
-    padding-bottom: 120px;
+    padding-bottom: 200px;
+    margin-bottom: 200px;
   }
 
   .box {

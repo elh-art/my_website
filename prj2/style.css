@@ -222,7 +222,7 @@ button {
 
 .homeText {
   position: relative;
-  visibility: hidden;
+  opacity: 0.5;
   font-weight: 900;
   text-transform: uppercase;
   font-style: italic;
@@ -242,7 +242,7 @@ svg {
 }
 
 .home:hover .homeText {
-  visibility: visible;
+  opacity: 1;
 }
 
 .home:hover .fa-reply {
@@ -254,11 +254,9 @@ svg {
   background-color: steelblue;
   border-radius: 3px;
   top: 100px;
-  margin: 30px;
   max-width: 350px;
   padding: 27px 12px 0px 12px;
   font-size: 16px;
-  text-align: center;
   letter-spacing: 1px;
   box-shadow: 10px 10px rgba(6, 67, 107, 0.5);
   z-index: 10;

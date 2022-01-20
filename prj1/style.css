@@ -128,7 +128,7 @@ body {
 
 .homeText {
   position: relative;
-  visibility: hidden;
+  opacity: 0.5;
   font-weight: 900;
   text-transform: uppercase;
   font-style: italic;
@@ -149,11 +149,15 @@ svg {
 }
 
 .home:hover .homeText {
-  visibility: visible;
+  opacity: 1;
 }
 
 .home:hover .fa-reply {
   transform: scale(1.1);
+}
+
+.backHome .homeLink {
+  color: darkorchid;
 }
 
 .description {
