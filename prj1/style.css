@@ -114,7 +114,7 @@ body {
   transform: translateY(100vh);
 }
 
-.back {
+.home {
   position: absolute;
   top: 680px;
   display: flex;
@@ -122,11 +122,11 @@ body {
   text-align: center;
 }
 
-.backLink {
+.homeLink {
   color: orange;
 }
 
-.backText {
+.homeText {
   position: relative;
   visibility: hidden;
   font-weight: 900;
@@ -136,7 +136,7 @@ body {
   color: darkslateblue;
 }
 
-.backText:before {
+.homeText:before {
   left: 0;
   top: 0;
   content: attr(filter-content);
@@ -148,11 +148,11 @@ svg {
   width: 0;
 }
 
-.back:hover .backText {
+.home:hover .homeText {
   visibility: visible;
 }
 
-.back:hover .fa-reply {
+.home:hover .fa-reply {
   transform: scale(1.1);
 }
 
